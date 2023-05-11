@@ -34,10 +34,10 @@ class Display{
     }
 
     imprimirValores(){
-        this.pantallaValor.textContent = this.valorActual;
-        this.pantallaResult.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] || ''}`;
-        console.log("pantallaValor",this.pantallaValor.value)
-        console.log("pantallaResult",this.pantallaResult.value)
+        this.pantallaResult.textContent = this.valorActual;
+        this.pantallaValor.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] || ''}`;
+        console.log("pantallaValor",this.pantallaValor.textContent)
+        console.log("pantallaResult",this.pantallaResult.textContent)
         
     }
 
@@ -52,6 +52,9 @@ class Display{
     computar(tipo){
         this.tipoOperacion !== "igual" && this.calcular();
         this.tipoOperacion = tipo;
+        this.valorAnterior = this.valorActual || this.valorAnterior;
+        this.valorActual = " ";
+        this.imprimirValores();
     }
     
 }
