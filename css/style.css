@@ -3,6 +3,12 @@ body{
     background: rgb(30, 99, 156);
 }
 
+.background{
+    background-color: red;
+}
+.background2{
+    background-color: rgb(18, 160, 148);
+}
 .container{
     display: flex;
     justify-content: center;
